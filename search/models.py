@@ -11,6 +11,7 @@ class Base(models.Model):
     organization = models.CharField(max_length=255, verbose_name='Инициатор')
     num = models.IntegerField(validators=[MinValueValidator(10)], verbose_name='Номер инициатора')
     erp = models.CharField(null=True, blank=True, max_length=255, verbose_name='Номер ЕРП')
+    is_active = models.BooleanField("Активный", default=True)
     created = models.DateTimeField(auto_now=True)
 
     class Meta:
